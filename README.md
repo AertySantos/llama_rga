@@ -52,7 +52,7 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
 ## **Instalação**
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/seu_usuario/llama_rag.git](https://github.com/AertySantos/llama_rga.git)
+   git clone https://github.com/seu_usuario/llama_rag.git
    cd llama_rag
    ```
 2. Instale as dependências:
