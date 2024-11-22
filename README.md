@@ -1,51 +1,67 @@
-# **RAG com LLMs (Retrieval-Augmented Generation)**
+# **RAG (Retrieval-Augmented Generation)**
 
-Este projeto implementa um sistema de **Geração Aumentada por Recuperação (RAG)** utilizando **Modelos de Linguagem Grande (LLMs)** para fornecer respostas precisas e contextuais a partir de uma base de dados externa.
+Este projeto implementa um sistema de **Geração Aumentada por Recuperação (RAG)**, que combina **Modelos de Linguagem Grande (LLMs)** com dados externos para fornecer respostas precisas, atualizadas e contextuais.
+
+---
 
 ## **Descrição**
-A abordagem RAG combina recuperação de informações com modelos de linguagem. Quando uma consulta é feita, o sistema:
-1. Recupera informações relevantes de uma base de conhecimento externa.
-2. Usa um LLM para processar a consulta junto com os dados recuperados e gerar uma resposta contextualizada.
 
-Isso permite:
-- **Respostas atualizadas** com base em dados externos.
-- **Redução do tamanho do modelo**, já que o conhecimento é buscado em tempo real.
-- **Aplicação flexível** para diversos domínios, como suporte ao cliente, pesquisa científica, ou análise jurídica.
+Um pipeline RAG é projetado para responder perguntas ao recuperar informações de fontes externas e processá-las com um LLM. Este projeto utiliza o **LangChain**, uma biblioteca voltada para a criação de fluxos de trabalho com LLMs, para construir o pipeline.
+
+### **Etapas do Pipeline**
+
+1. **Ingestão de Dados**  
+   O processo começa com a coleta de dados de diversas fontes, como arquivos de texto, PDFs e páginas da web. O LangChain oferece ferramentas específicas para isso, incluindo:
+   - **TextLoader**: Carrega arquivos de texto.
+   - **PyPDFLoader**: Lê dados de documentos PDF.
+
+2. **Transformação de Dados**  
+   Após a ingestão, os dados são preparados para uso. Uma etapa comum é a divisão dos documentos em trechos menores, devido à limitação do tamanho de contexto dos LLMs.  
+   Ferramenta recomendada: **RecursiveCharacterTextSplitter**.
+
+3. **Incorporação de Vetores**  
+   Os dados são convertidos em representações vetoriais usando métodos como **OpenAIEmbeddings** ou **OllamaEmbeddings**. Esses vetores são armazenados em repositórios especializados, como:
+   - **FAISS**: Rápido e eficiente, ideal para busca de vetores similares, mas exige configuração detalhada.
+
+### **Benefícios**
+- **Respostas atualizadas** com dados externos.
+- **Menor dependência de modelos gigantes**, já que o conhecimento é buscado dinamicamente.
+- **Versatilidade de aplicação** em áreas como suporte ao cliente, pesquisa acadêmica e análise jurídica.
 
 ---
 
 ## **Funcionalidades**
-- Consulta a uma base de dados externa via motores de busca vetoriais (e.g., FAISS, Pinecone, Weaviate).
-- Integração com modelos de linguagem como GPT, LLaMA ou modelos via Hugging Face.
-- Recuperação eficiente usando embeddings para encontrar os documentos mais relevantes.
-- Respostas geradas dinamicamente com base nos dados recuperados.
+- Busca em bases de dados externas com motores vetoriais (e.g., FAISS, Pinecone, Weaviate).
+- Integração com LLMs como GPT, LLaMA ou modelos disponíveis no Hugging Face.
+- Recuperação eficiente para encontrar documentos relevantes com embeddings.
+- Geração dinâmica de respostas com base nos dados recuperados.
 
 ---
 
 ## **Requisitos**
 - **Python 3.8+**
-- Bibliotecas essenciais:
+- Dependências principais:
   - `transformers`
-  - `faiss-cpu` (ou outro motor de busca vetorial)
+  - `faiss-cpu` (ou outro motor vetorial)
   - `sentence-transformers`
   - `torch`
-- Outros requisitos (veja `requirements.txt`).
+- Veja mais detalhes em `requirements.txt`.
 
 ---
 
 ## **Instalação**
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu_usuario/llama_rga.git
-   cd llama_rga
+   git clone https://github.com/seu_usuario/llama_rag.git
+   cd llama_rag
    ```
 2. Instale as dependências:
    ```bash
    pip install -r requirements.txt
    ```
-3. Configure a base de dados:
-   - Adicione seus documentos no diretório `data/`.
-   - Crie os embeddings:
+3. Configure os dados:
+   - Adicione seus arquivos no diretório `data/`.
+   - Gere os embeddings:
      ```bash
      python create_embeddings.py
      ```
@@ -53,41 +69,43 @@ Isso permite:
 ---
 
 ## **Como usar**
-1. Execute o servidor:
+1. Inicie o servidor:
    ```bash
    python app.py
    ```
 
+2. Acesse a interface ou envie requisições para gerar respostas baseadas nos dados fornecidos.
 
 ---
 
 ## **Estrutura do Projeto**
 ```plaintext
-├── data/                 # Diretório para documentos
-├── embeddings/           # Arquivos de embeddings gerados
+├── data/                 # Diretório para arquivos de dados
+├── embeddings/           # Armazenamento de embeddings gerados
 ├── models/               # Modelos e configurações
-├── app.py                # Script principal do servidor
-├── create_embeddings.py  # Gera embeddings a partir dos documentos
-├── requirements.txt      # Dependências do projeto
-├── README.md             # Este arquivo
+├── app.py                # Script principal para execução
+├── create_embeddings.py  # Geração de embeddings
+├── requirements.txt      # Lista de dependências
+├── README.md             # Documento de instruções
 ```
 
 ---
 
-## **Exemplo**
-Entrada:
+## **Exemplo de Uso**
 
+- **Entrada**: Uma pergunta feita pelo usuário.  
+- **Processo**: O pipeline recupera informações relevantes, processa os dados com o LLM e retorna uma resposta clara e contextualizada.  
 
 ---
 
 ## **Contribuições**
-Sinta-se à vontade para abrir issues e pull requests para melhorias.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests para aprimorar o projeto.
 
 ---
 
 ## **Licença**
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para mais informações.
+Este projeto está licenciado sob a **MIT License**. Consulte o arquivo `LICENSE` para mais detalhes. 
 
 ---
 
-Se precisar de ajustes ou detalhes específicos, avise! 😎
+Precisa de ajustes adicionais? Estou à disposição! 🚀
