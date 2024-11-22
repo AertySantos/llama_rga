@@ -55,11 +55,17 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
    git clone https://github.com/seu_usuario/llama_rag.git
    cd llama_rag
    ```
-2. Instale as dependências:
-   ```bash
+2. Crie um ambiente virtual com conda e ative-o. Primeiro, certifique-se de ter o conda instalado. Em seguida, execute o seguinte comando:
+   ```
+   conda create -n llms python=3.11 -y && source activate llms
+   ```
+
+3. Execute o seguinte comando no terminal para instalar os pacotes Python necessários:
+   ```
    pip install -r requirements.txt
    ```
-3. Configure os dados:
+   
+4. Configure os dados:
    - Adicione seus arquivos no diretório `data/`.
    - Gere os embeddings:
      ```bash
