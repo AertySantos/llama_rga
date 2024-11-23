@@ -8,7 +8,7 @@ Este projeto implementa um sistema de **Geração Aumentada por Recuperação (R
 
 Um pipeline RAG é projetado para responder perguntas ao recuperar informações de fontes externas e processá-las com um LLM. Este projeto utiliza o **LangChain**, uma biblioteca voltada para a criação de fluxos de trabalho com LLMs, para construir o pipeline.
 
-![Processo RAG](diagram.png)
+![Processo RAG](diagramarag.png)
 
 ### **Etapas do Pipeline**
 
