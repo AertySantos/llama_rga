@@ -58,7 +58,9 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
    cd llama_rag
    ```
 2. Faça o download do [Modelo](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF), para a pasta models
-
+   ```
+   https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF
+   ```
 
 3. Crie um ambiente virtual com conda e ative-o. Primeiro, certifique-se de ter o conda instalado. Em seguida, execute o seguinte comando:
    ```
