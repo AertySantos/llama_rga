@@ -54,7 +54,7 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
 ## **Instalação**
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu_usuario/llama_rag.git
+   git clone https://github.com/AertySantos/llama_rga.git
    cd llama_rag
    ```
 2. Crie um ambiente virtual com conda e ative-o. Primeiro, certifique-se de ter o conda instalado. Em seguida, execute o seguinte comando:
