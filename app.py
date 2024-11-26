@@ -8,24 +8,6 @@ import sys
 
 DB_FAISS_PATH = "vectorstore/db_faiss"
 
-custom_prompt_template = """Use the following pieces of information to answer the user's question.
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
-
-Context: {context}
-Question: {question}
-
-Only return the helpful answer below and nothing else.
-Helpful answer:
-"""
-
-def set_custom_prompt():
-    """
-    Prompt template for QA retrieval for each vectorstore
-    """
-    prompt = PromptTemplate(template=custom_prompt_template,
-                            input_variables=['context', 'question'])
-    return prompt
-    
 # Download Sentence Transformers Embedding From Hugging Face
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
@@ -46,7 +28,7 @@ llm = LlamaCpp(
 )
 
 qa = ConversationalRetrievalChain.from_llm(
-    llm, retriever = new_db.as_retriever(search_kwargs={'k': 3}))
+    llm, retriever = new_db.as_retriever(search_kwargs={'k': 5}))
 
 while True:
     chat_history = []

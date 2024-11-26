@@ -1,5 +1,5 @@
 # Importação de módulos necessários para processamento de linguagem natural
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader, UnstructuredXMLLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter 
@@ -18,7 +18,7 @@ print(data[:1])
 
 # Divisão do texto em partes menores para facilitar o processamento
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=100, chunk_overlap=20)
+    chunk_size=500, chunk_overlap=20)
 text_chunks = text_splitter.split_documents(data)
 
 # Impressão do número de partes resultantes após a divisão do texto
