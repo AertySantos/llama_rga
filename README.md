@@ -64,6 +64,10 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
 
 3. Crie um ambiente virtual com conda e ative-o. Primeiro, certifique-se de ter o conda instalado. Em seguida, execute o seguinte comando:
    ```
+   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+   ./Miniconda3-latest-Linux-x86_64.sh
+   export PATH="$HOME/miniconda3/bin:$PATH"
+   source ~/.bashrc
    conda create -n llms python=3.11 -y && source activate llms
    ```
 
