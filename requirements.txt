@@ -4,7 +4,10 @@ torch
 accelerate
 bitsandbytes
 ctransformers
-sentence_transformers
-faiss_cpu
+sentence-transformers
+faiss-cpu
 chainlit
-huggingface_hub
+huggingface-hub
+langchain-community
+--no-cache-dir llama-cpp-python==0.2.77 --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu124
+llama-cpp-python
