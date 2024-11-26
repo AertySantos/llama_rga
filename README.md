@@ -57,24 +57,20 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
    git clone https://github.com/AertySantos/llama_rga.git
    cd llama_rag
    ```
-2. Faça o download do modelo, para a pasta models:
-   ```
-[Modelo](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF)
-   
-   ```
+2. Faça o download do [Modelo](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF), para a pasta models
 
 
-2. Crie um ambiente virtual com conda e ative-o. Primeiro, certifique-se de ter o conda instalado. Em seguida, execute o seguinte comando:
+3. Crie um ambiente virtual com conda e ative-o. Primeiro, certifique-se de ter o conda instalado. Em seguida, execute o seguinte comando:
    ```
    conda create -n llms python=3.11 -y && source activate llms
    ```
 
-3. Execute o seguinte comando no terminal para instalar os pacotes Python necessários:
+4. Execute o seguinte comando no terminal para instalar os pacotes Python necessários:
    ```
    pip install -r requirements.txt
    ```
 
-4. Configure os dados:
+5. Configure os dados:
    - Adicione seus arquivos no diretório `data/`.
    - Gere os embeddings:
      ```bash
