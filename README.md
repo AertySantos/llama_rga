@@ -59,7 +59,7 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
    ```
 2. Faça o download do modelo, para a pasta models:
    ```
-   [Modelo](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF)
+   [Modelo] (https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF)
    ```
 
 
