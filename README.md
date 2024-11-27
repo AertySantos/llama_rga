@@ -113,7 +113,7 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
 ## **Estrutura do Projeto**
 ```plaintext
 ├── data/                 # Diretório para arquivos de dados
-├── embeddings/           # Armazenamento de embeddings gerados
+├── vectorstore/db_faiss  # Armazenamento de embeddings gerados
 ├── models/               # Modelos e configurações
 ├── app.py                # Script principal para execução
 ├── create_embeddings.py  # Geração de embeddings
