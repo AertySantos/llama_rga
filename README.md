@@ -22,7 +22,7 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
    Ferramenta recomendada: **RecursiveCharacterTextSplitter**.
 
 3. **Incorporação de Vetores**  
-   Os dados são convertidos em representações vetoriais usando métodos como **OpenAIEmbeddings** ou **OllamaEmbeddings**. Esses vetores são armazenados em repositórios especializados, como:
+   Os dados são convertidos em representações vetoriais usando o método **HuggingFaceEmbeddings**. Esses vetores são armazenados em repositórios especializados, como:
    - **FAISS**: Rápido e eficiente, ideal para busca de vetores similares, mas exige configuração detalhada.
 
 ### **Benefícios**
