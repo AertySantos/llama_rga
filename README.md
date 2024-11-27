@@ -103,7 +103,8 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
 ## **Como usar**
 1. Inicie o servidor:
    ```bash
-   python app.py
+   conda activate seu_ambiente
+   python3 app.py
    ```
 
 2. Acesse a interface ou envie requisições para gerar respostas baseadas nos dados fornecidos.
