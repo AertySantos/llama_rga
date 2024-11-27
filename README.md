@@ -43,10 +43,14 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
 ## **Requisitos**
 - **Python 3.8+**
 - Dependências principais:
-  - `transformers`
-  - `faiss-cpu` (ou outro motor vetorial)
-  - `sentence-transformers`
-  - `torch`
+  - pypdf
+  - langchain
+  - torch
+  - accelerate
+  - bitsandbytes
+  - ctransformers
+  - sentence-transformers
+  - faiss-cpu
 - Veja mais detalhes em `requirements.txt`.
 
 ---
