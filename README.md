@@ -92,7 +92,7 @@ Um pipeline RAG é projetado para responder perguntas ao recuperar informações
    ```
 
 6. Configure os dados:
-   - Adicione seus arquivos no diretório `data/`.
+   - Coloque os arquivos que serão armazenados no banco de dados dentro do diretório `data/`
    - Gere os embeddings:
      ```bash
      python create_embeddings.py
